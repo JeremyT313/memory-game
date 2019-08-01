@@ -11,97 +11,96 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div class="play-field">
-      <div class="memory-card">
-        <img src="assets/cane-corso.jpg" class="front-card" alt="" />
-        <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
+    <header>
+      <h1>Memory Game</h1>
+      <nav>
+        <div id="game-timer">
+          <input type="button" value="START" onclick="startTimer()"></input>
+          <input type="button" value="STOP" onclick="stopTimer()"></input>
+          <span class="minutes">0</span> Minute(s)
+          <span class="seconds">00</span> Seconds
+          <button>Reset Game</button>
+          <button>Help</button>
+        </div>
+      </nav>
+    </header>
+    <section>
+      <div class="play-field">
+        <div class="memory-card">
+          <img src="assets/cane-corso.jpg" class="front-card" alt="" />
+          <img src="assets/card-back-sub.jpg" class="back-card" alt="" />
+        </div>
+        <div class="memory-card">
+          <img src="assets/cane-corso.jpg" class="front-card" alt="" />
+          <img src="assets/card-back-sub.jpg" class="back-card" alt="" />
+        </div>
+        <div class="memory-card">
+          <img src="assets/cattledog.jpg" class="front-card" alt="" />
+          <img src="assets/card-back-sub.jpg" class="back-card" alt="" />
+        </div>
+        <div class="memory-card">
+          <img src="assets/cattledog.jpg" class="front-card" alt="" />
+          <img src="assets/card-back-sub.jpg" class="back-card" alt="" />
+        </div>
+        <div class="memory-card">
+          <img src="assets/puli.jpg" class="front-card" alt="" />
+          <img src="assets/card-back-sub.jpg" class="back-card" alt="" />
+        </div>
+        <div class="memory-card">
+          <img src="assets/puli.jpg" class="front-card" alt="" />
+          <img src="assets/card-back-sub.jpg" class="back-card" alt="" />
+        </div>
+        <div class="memory-card">
+          <img src="assets/spaniel.jpg" class="front-card" alt="" />
+          <img src="assets/card-back-sub.jpg" class="back-card" alt="" />
+        </div>
+        <div class="memory-card">
+          <img src="assets/spaniel.jpg" class="front-card" alt="" />
+          <img src="assets/card-back-sub.jpg" class="back-card" alt="" />
+        </div>
+        <div class="memory-card">
+          <img src="assets/shihtzu.jpg" class="front-card" alt="" />
+          <img src="assets/card-back-sub.jpg" class="back-card" alt="" />
+        </div>
+        <div class="memory-card">
+          <img src="assets/shihtzu.jpg" class="front-card" alt="" />
+          <img src="assets/card-back-sub.jpg" class="back-card" alt="" />
+        </div>
+        <div class="memory-card">
+          <img src="assets/terrier-one.jpg" class="front-card" alt="" />
+          <img src="assets/card-back-sub.jpg" class="back-card" alt="" />
+        </div>
+        <div class="memory-card">
+          <img src="assets/terrier-one.jpg" class="front-card" alt="" />
+          <img src="assets/card-back-sub.jpg" class="back-card" alt="" />
+        </div>
+        <div class="memory-card">
+          <img src="assets/chowchow.jpg" class="front-card" alt="" />
+          <img src="assets/card-back-sub.jpg" class="back-card" alt="" />
+        </div>
+        <div class="memory-card">
+          <img src="assets/chowchow.jpg" class="front-card" alt="" />
+          <img src="assets/card-back-sub.jpg" class="back-card" alt="" />
+        </div>
+        <div class="memory-card">
+          <img src="assets/crested.jpg" class="front-card" alt="" />
+          <img src="assets/card-back-sub.jpg" class="back-card" alt="" />
+        </div>
+        <div class="memory-card">
+          <img src="assets/crested.jpg" class="front-card" alt="" />
+          <img src="assets/card-back-sub.jpg" class="back-card" alt="" />
+        </div>
+        <div class="memory-card">
+          <img src="assets/russell.jpg" class="front-card" alt="" />
+          <img src="assets/card-back-sub.jpg" class="back-card" alt="" />
+        </div>
+        <div class="memory-card">
+          <img src="assets/russell.jpg" class="front-card" alt="" />
+          <img src="assets/card-back-sub.jpg" class="back-card" alt="" />
+        </div>
       </div>
-      <div class="memory-card">
-        <img src="assets/cane-corso.jpg" class="front-card" alt="" />
-        <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
-      </div>
-      <div class="memory-card">
-        <img src="assets/cattledog.jpg" class="front-card" alt="" />
-        <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
-      </div>
-      <div class="memory-card">
-        <img src="assets/cattledog.jpg" class="front-card" alt="" />
-        <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
-      </div>
-      <div class="memory-card">
-        <img src="assets/pomeranian.jpg" class="front-card" alt="" />
-        <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
-      </div>
-      <div class="memory-card">
-        <img src="assets/pomeranian.jpg" class="front-card" alt="" />
-        <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
-      </div>
-      <div class="memory-card">
-        <img src="assets/puli.jpg" class="front-card" alt="" />
-        <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
-      </div>
-      <div class="memory-card">
-        <img src="assets/puli.jpg" class="front-card" alt="" />
-        <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
-      </div>
-      <div class="memory-card">
-        <img src="assets/spaniel.jpg" class="front-card" alt="" />
-        <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
-      </div>
-      <div class="memory-card">
-        <img src="assets/spaniel.jpg" class="front-card" alt="" />
-        <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
-      </div>
-      <div class="memory-card">
-        <img src="assets/shihtzu.jpg" class="front-card" alt="" />
-        <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
-      </div>
-      <div class="memory-card">
-        <img src="assets/shihtzu.jpg" class="front-card" alt="" />
-        <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
-      </div>
-      <div class="memory-card">
-        <img src="assets/terrier-one.jpg" class="front-card" alt="" />
-        <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
-      </div>
-      <div class="memory-card">
-        <img src="assets/terrier-one.jpg" class="front-card" alt="" />
-        <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
-      </div>
-      <div class="memory-card">
-        <img src="assets/chowchow.jpg" class="front-card" alt="" />
-        <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
-      </div>
-      <div class="memory-card">
-        <img src="assets/chowchow.jpg" class="front-card" alt="" />
-        <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
-      </div>
-      <div class="memory-card">
-        <img src="assets/crested.jpg" class="front-card" alt="" />
-        <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
-      </div>
-      <div class="memory-card">
-        <img src="assets/crested.jpg" class="front-card" alt="" />
-        <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
-      </div>
-      <div class="memory-card">
-        <img src="assets/russell.jpg" class="front-card" alt="" />
-        <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
-      </div>
-      <div class="memory-card">
-        <img src="assets/russell.jpg" class="front-card" alt="" />
-        <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
-      </div>
-    </div>
+    </section>
 
-    <button id="start-btn">Start Game!</button>
-    <button id="reset-btn">Reset Game</button>
-    <div>
-      <input type="button" value="START" onclick="startTimer()"></input>
-      <input type="button" value="STOP" onclick="stopTimer()"></input>
-      <span class="minutes">0</span> Minute(s)
-      <span class="seconds">00</span> Seconds
-    </div>
 
     <script src="js/script.js"></script>
   </body>
