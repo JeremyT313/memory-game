@@ -51,7 +51,6 @@ nav {
 }
 .front-card {
   transform: rotateY(180deg);
-
 }
 .memory-card.flip:after {
   transition: transform 1500ms;
@@ -86,6 +85,14 @@ nav {
   color: white;
 }
 
+.end-game {
+  display: none;
+}
+
+.pawprint {
+  height: 100px;
+  width: 100px;
+}
 
 @media only screen and (min-width: 750px) {
   .play-field {
@@ -93,24 +100,4 @@ nav {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
   }
-}
-
-/* startGame popup CSS */
-
-.popup {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.pop {
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(8, 8, 8, 0.3);
-  color: white;
 }
