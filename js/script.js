@@ -1,3 +1,21 @@
+
+const cards = document.querySelectorAll(".memory-card");
+let hasFlipped = false;
+let firstCard, secondCard;
+function flipCard() {
+  this.classList.add(`flip`);
+
+  if (!hasFlippedCard) {
+    hasFlippedCard = true;
+    firstCard = this;
+
+    console.log({ hasFlippedCard, firstCard });
+  }
+}
+cards.forEach(card => card.addEventListener(`click`, flipCard));
+
+let deck = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+
 function startTimer() {
   let seconds = 0;
   timer = setInterval(function() {
@@ -38,3 +56,26 @@ function isEndGame(counter) {
   //counter counts the cards that are taken out until it reaches the number
   //of total cards in a cam
 }
+
+function startGame() {
+  shuffle();
+  startTimer();
+}
+
+function shuffle(cards) {
+  let currentIndex = cards.length,
+    temporaryValue,
+    randomIndex;
+
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = cards[currentIndex];
+    cards[currentIndex] = cards[randomIndex];
+    cards[randomIndex] = temporaryValue;
+  }
+  return cards;
+}
+
+document.querySelector("#start-btn").addEventListener("click", startGame);
+console.log(shuffle(cards));
