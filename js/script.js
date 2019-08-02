@@ -29,6 +29,7 @@ function stopTimer() {
   clearInterval(timer);
 }
 
+
 endGameCounter = deck.length;
 
 function isMatch(card1, card2) {
@@ -77,5 +78,11 @@ function shuffle(cards) {
   return cards;
 }
 
-document.querySelector("#start-btn").addEventListener("click", startGame);
+function display() {
+  document.querySelector(".popup").style.display = "none";
+  shuffle();
+  startTimer();
+}
+
+document.querySelector(".start").addEventListener("click", display);
 console.log(shuffle(cards));
