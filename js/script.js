@@ -11,14 +11,17 @@ function flipCard() {
 
   if (!hasFlippedCard) {
       hasFlippedCard = true;
-      secondCard = this;
-      console.log(secondCard.attributes[1].value);
-      isMatch(firstCard, secondCard);
+      firstCard = this;
+      console.log(firstCard.attributes[1].value);
+      firstCard.removeEventListener("click", flipCard);
 
   } else {
       hasFlippedCard = false;
-      firstCard = this;
-      console.log(firstCard.attributes[1].value);
+      secondCard = this;
+      console.log(secondCard.attributes[1].value);
+      secondCard.removeEventListener("click", flipCard);
+      isMatch(firstCard, secondCard);
+
   }
 }
 
@@ -50,13 +53,16 @@ function isMatch(card1, card2) {
     //removeMatchedCards(card1, card2);
     console.log("cards were a match");
     endGameCounter -= 2;
-    console.log(endGameCounter);
+    card1.removeEventListener("click", flipCard);
+    card2.removeEventListener("click", flipCard);
   } else {
     //run code to flip cards back over and continue game
     // function flipCard()
     console.log("Cards were not a match");
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
+    card1.addEventListener("click", flipCard);
+    card2.addEventListener("click", flipCard);
   }
   isEndGame(endGameCounter);
 
@@ -72,11 +78,10 @@ function isEndGame(counter) {
   //checks for End of the Game
   //counter counts the cards that are taken out until it reaches the number
   //of total cards in a cam
-}
-
-function startGame() {
-  shuffle(deck);
-  startTimer();
+  if (endGameCounter === 0) {
+    console.log("Congratulations! You have won the game!");
+    stopTimer();
+  }
 }
 
 function shuffle(deck) {
@@ -94,10 +99,10 @@ function shuffle(deck) {
   return deck;
 }
 
-function display() {
+function startGame() {
   document.querySelector(".popup").style.display = "none";
   shuffle(deck);
   startTimer();
 }
 
-document.querySelector(".start").addEventListener("click", display);
+document.querySelector(".start").addEventListener("click", startGame);
