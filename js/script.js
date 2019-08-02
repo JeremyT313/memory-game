@@ -1,4 +1,5 @@
 const cards = document.querySelectorAll(".memory-card");
+console.log(cards);
 let hasFlippedCard = false;
 let firstCard, secondCard;
 cards.forEach(card => {
@@ -93,6 +94,8 @@ function shuffle(deck) {
     deck[randomIndex] = temporaryValue;
   }
   return deck;
+  //After deck has been shuffled we need to make sure the innerHTML of the play-field is set equal
+  //to empty string ("") and then do a for each method in the deck array and inner html it with all of its properties.
 }
 
 function startGame() {
@@ -108,6 +111,12 @@ function reset() {
   });
   document.querySelector(".end-game").style.display = "none";
   shuffle(deck);
+  const playField = document.querySelector(".play-field");
+  playField.innerHTML = "";
+  deck.forEach((card) => {
+    console.log(card);
+    playField.appendChild(card);
+  });
   startTimer();
 }
 
