@@ -1,5 +1,6 @@
 
 const cards = document.querySelectorAll(".memory-card");
+console.log(cards);
 let hasFlippedCard = false;
 let firstCard, secondCard;
 cards.forEach ((card) => {
@@ -78,7 +79,7 @@ function isEndGame(counter) {
   //checks for End of the Game
   //counter counts the cards that are taken out until it reaches the number
   //of total cards in a cam
-  if (endGameCounter === 0) {
+  if (counter === 0) {
     console.log("Congratulations! You have won the game!");
     stopTimer();
   }
@@ -97,11 +98,19 @@ function shuffle(deck) {
     deck[randomIndex] = temporaryValue;
   }
   return deck;
+  //After deck has been shuffled we need to make sure the innerHTML of the play-field is set equal
+  //to empty string ("") and then do a for each method in the deck array and inner html it with all of its properties.
 }
 
 function startGame() {
   document.querySelector(".popup").style.display = "none";
   shuffle(deck);
+  const playField = document.querySelector(".play-field");
+  playField.innerHTML = "";
+  deck.forEach((card) => {
+    console.log(card);
+    playField.appendChild(card);
+  });
   startTimer();
 }
 
