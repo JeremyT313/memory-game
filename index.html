@@ -16,7 +16,7 @@
       <nav>
         <div id="game-timer">
           
-          <input type="image" src="/assets/pawprint.png" style="border: 0; background: transparent" value="START"  onclick="startTimer()"></input>;
+          <input class="pawprint" type="image" src="/assets/pawprint.png" style="border: 0; background: transparent" value="START"  onclick="startTimer()"></input>
           <input type="button" value="STOP" onclick="stopTimer()"></input>
           <span class="minutes">0</span> Minute(s)
           <span class="seconds">00</span> Seconds
@@ -101,14 +101,21 @@
         </div>
       </div>
     </section>
-    <div class="popup">
-        <section class="pop">
-          <p>How to Play</p>
-          <p>Each turn, two cards are flipped over.<br> If the cards do not match, they are both turned back face
-            down.<br>
-            If the cards match, they will disappear! <br>Collect all the matches to win the game!</p>
-          <button class="start">button</button>
-        </section>
+    <div class="start-game popup">
+      <section class="pop">
+        <p>How to Play</p>
+        <p>Each turn, two cards are flipped over.<br> If the cards do not match, they are both turned back face
+          down.<br>
+          If the cards match, they will disappear! <br>Collect all the matches to win the game!</p>
+        <button class="start">button</button>
+      </section>
+    </div>
+    <div class="end-game popup">
+      <section class="pop">
+        <p>Congratulations You've Won!</p>
+        <p>You beat the game in ...</p>
+        <button class="end">Restart Game</button>
+      </section>
     </div>
 
 

@@ -1,33 +1,30 @@
-
 const cards = document.querySelectorAll(".memory-card");
 console.log(cards);
 let hasFlippedCard = false;
 let firstCard, secondCard;
-cards.forEach ((card) => {
-  card.addEventListener(`click`, flipCard)
+cards.forEach(card => {
+  card.addEventListener(`click`, flipCard);
 });
 
 function flipCard() {
   this.classList.add(`flip`);
 
   if (!hasFlippedCard) {
-      hasFlippedCard = true;
-      firstCard = this;
-      console.log(firstCard.attributes[1].value);
-      firstCard.removeEventListener("click", flipCard);
-
+    hasFlippedCard = true;
+    firstCard = this;
+    console.log(firstCard.attributes[1].value);
+    firstCard.removeEventListener("click", flipCard);
   } else {
-      hasFlippedCard = false;
-      secondCard = this;
-      console.log(secondCard.attributes[1].value);
-      secondCard.removeEventListener("click", flipCard);
-      isMatch(firstCard, secondCard);
-
+    hasFlippedCard = false;
+    secondCard = this;
+    console.log(secondCard.attributes[1].value);
+    secondCard.removeEventListener("click", flipCard);
+    isMatch(firstCard, secondCard);
   }
 }
 
 const deck = [];
-cards.forEach((card) => {
+cards.forEach(card => {
   deck.push(card);
 });
 
@@ -44,7 +41,6 @@ function stopTimer() {
   clearInterval(timer);
 }
 
-
 endGameCounter = deck.length;
 
 function isMatch(card1, card2) {
@@ -60,19 +56,18 @@ function isMatch(card1, card2) {
     //run code to flip cards back over and continue game
     // function flipCard()
     console.log("Cards were not a match");
-    firstCard.classList.remove('flip');
-    secondCard.classList.remove('flip');
+    setTimeout(() => {
+      firstCard.classList.remove("flip");
+      secondCard.classList.remove("flip");
+    }, 1500);
     card1.addEventListener("click", flipCard);
     card2.addEventListener("click", flipCard);
   }
   isEndGame(endGameCounter);
-
 }
 
 function removeMatchedCards(card1, card2) {
   //removes the matched cards from teh play area
-
-
 }
 
 function isEndGame(counter) {
@@ -82,6 +77,7 @@ function isEndGame(counter) {
   if (counter === 0) {
     console.log("Congratulations! You have won the game!");
     stopTimer();
+    document.querySelector(".end-game").style.display = "flex";
   }
 }
 
@@ -103,7 +99,17 @@ function shuffle(deck) {
 }
 
 function startGame() {
-  document.querySelector(".popup").style.display = "none";
+  document.querySelector(".start-game").style.display = "none";
+  shuffle(deck);
+  startTimer();
+}
+
+function reset() {
+  let div = document.querySelectorAll("div");
+  div.forEach(div => {
+    div.classList.remove("flip");
+  });
+  document.querySelector(".end-game").style.display = "none";
   shuffle(deck);
   const playField = document.querySelector(".play-field");
   playField.innerHTML = "";
@@ -115,3 +121,4 @@ function startGame() {
 }
 
 document.querySelector(".start").addEventListener("click", startGame);
+document.querySelector(".end").addEventListener("click", reset);
