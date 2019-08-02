@@ -96,21 +96,3 @@ nav {
 }
 
 /* startGame popup CSS */
-
-.popup {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.pop {
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(8, 8, 8, 0.3);
-  color: white;
-}
