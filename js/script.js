@@ -1,4 +1,20 @@
-let cards = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+
+const cards = document.querySelectorAll(".memory-card");
+let hasFlipped = false;
+let firstCard, secondCard;
+function flipCard() {
+  this.classList.add(`flip`);
+
+  if (!hasFlippedCard) {
+    hasFlippedCard = true;
+    firstCard = this;
+
+    console.log({ hasFlippedCard, firstCard });
+  }
+}
+cards.forEach(card => card.addEventListener(`click`, flipCard));
+
+let deck = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 
 function startTimer() {
   let seconds = 0;
