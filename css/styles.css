@@ -1,55 +1,68 @@
-
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    height: 100vh;
-    background: #CCCCCC;
-
+  height: 100vh;
+  background: #cccccc;
 }
 
 .play-field {
-
-    height: 85vh;
-    width: 80vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    align-items: center;
-    border: 2px solid red;
-    margin: auto;
-
+  height: 85vh;
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  border: 2px solid red;
+  margin: auto;
 }
 
 .memory-card {
-    background: white;
-    height: 80%;
-    width: 50%;
-    margin: auto;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 5px 5px 15px;
-
+  background: white;
+  height: 80%;
+  width: 50%;
+  margin: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 15px;
 }
 
 .front-card,
 .back-card {
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    position: absolute;
-
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  position: absolute;
 }
 
 @media only screen and (min-width: 768px) {
+  .play-field {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
 
-    .play-field {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-    }
+/* startGame popup CSS */
+
+.popup {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.pop {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(8, 8, 8, 0.3);
+  color: white;
 }
