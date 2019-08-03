@@ -51,7 +51,6 @@ nav {
 }
 .front-card {
   transform: rotateY(180deg);
-
 }
 .memory-card.flip:after {
   transition: transform 1500ms;
@@ -103,5 +102,3 @@ nav {
     grid-template-rows: 1fr 1fr 1fr;
   }
 }
-
-/* startGame popup CSS */

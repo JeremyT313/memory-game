@@ -1,34 +1,31 @@
-
 const cards = document.querySelectorAll(".memory-card");
 console.log(cards);
 let hasFlippedCard = false;
 let firstCard, secondCard;
-cards.forEach ((card) => {
-  card.addEventListener(`click`, flipCard)
+cards.forEach(card => {
+  card.addEventListener(`click`, flipCard);
 });
 
 function flipCard() {
   this.classList.add(`flip`);
 
   if (!hasFlippedCard) {
-      hasFlippedCard = true;
-      firstCard = this;
-      console.log(firstCard.attributes[1].value);
-      firstCard.removeEventListener("click", flipCard);
-
+    hasFlippedCard = true;
+    firstCard = this;
+    console.log(firstCard.attributes[1].value);
+    firstCard.removeEventListener("click", flipCard);
   } else {
-      hasFlippedCard = false;
-      secondCard = this;
-      console.log(secondCard.attributes[1].value);
-      secondCard.removeEventListener("click", flipCard);
-      isMatch(firstCard, secondCard);
-
+    hasFlippedCard = false;
+    secondCard = this;
+    console.log(secondCard.attributes[1].value);
+    secondCard.removeEventListener("click", flipCard);
+    isMatch(firstCard, secondCard);
   }
 }
 
 //Need to create deck
 const deck = [];
-cards.forEach((card) => {
+cards.forEach(card => {
   deck.push(card);
 });
 
@@ -44,7 +41,6 @@ function startTimer() {
 function stopTimer() {
   clearInterval(timer);
 }
-
 
 endGameCounter = deck.length;
 
@@ -69,13 +65,10 @@ function isMatch(card1, card2) {
     card2.addEventListener("click", flipCard);
   }
   isEndGame(endGameCounter);
-
 }
 
 function removeMatchedCards(card1, card2) {
   //removes the matched cards from teh play area
-
-
 }
 
 function isEndGame(counter) {
@@ -107,7 +100,17 @@ function shuffle(deck) {
 }
 
 function startGame() {
-  document.querySelector(".popup").style.display = "none";
+  document.querySelector(".start-game").style.display = "none";
+  shuffle(deck);
+  startTimer();
+}
+
+function reset() {
+  let div = document.querySelectorAll("div");
+  div.forEach(div => {
+    div.classList.remove("flip");
+  });
+  document.querySelector(".end-game").style.display = "none";
   shuffle(deck);
   const playField = document.querySelector(".play-field");
   playField.innerHTML = "";
