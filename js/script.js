@@ -26,6 +26,7 @@ function flipCard() {
   }
 }
 
+//Need to create deck
 const deck = [];
 cards.forEach((card) => {
   deck.push(card);
@@ -60,8 +61,10 @@ function isMatch(card1, card2) {
     //run code to flip cards back over and continue game
     // function flipCard()
     console.log("Cards were not a match");
-    firstCard.classList.remove('flip');
-    secondCard.classList.remove('flip');
+    setTimeout(() => {
+      firstCard.classList.remove("flip");
+      secondCard.classList.remove("flip");
+    }, 550);
     card1.addEventListener("click", flipCard);
     card2.addEventListener("click", flipCard);
   }
@@ -82,6 +85,7 @@ function isEndGame(counter) {
   if (counter === 0) {
     console.log("Congratulations! You have won the game!");
     stopTimer();
+    document.querySelector(".end-game").style.display = "flex";
   }
 }
 
@@ -114,4 +118,15 @@ function startGame() {
   startTimer();
 }
 
+function reset() {
+  let div = document.querySelectorAll("div");
+  div.forEach(div => {
+    div.classList.remove("flip");
+  });
+  document.querySelector(".end-game").style.display = "none";
+  shuffle(deck);
+  startTimer();
+}
+
 document.querySelector(".start").addEventListener("click", startGame);
+document.querySelector(".end").addEventListener("click", reset);
