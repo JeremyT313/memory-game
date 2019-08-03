@@ -112,23 +112,11 @@ function reset() {
   });
   document.querySelector(".end-game").style.display = "none";
   shuffle(deck);
-  const playField = document.querySelector(".play-field");
-  playField.innerHTML = "";
-  deck.forEach((card) => {
-    console.log(card);
-    playField.appendChild(card);
-  });
   startTimer();
-}
-
-function reset() {
-  let div = document.querySelectorAll("div");
-  div.forEach(div => {
-    div.classList.remove("flip");
+  cards.forEach(card => {
+    card.addEventListener(`click`, flipCard);
   });
-  document.querySelector(".end-game").style.display = "none";
-  shuffle(deck);
-  startTimer();
+  endGameCounter = deck.length;
 }
 
 document.querySelector(".start").addEventListener("click", startGame);
