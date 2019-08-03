@@ -15,13 +15,15 @@
       <h1>Memory Game</h1>
       <nav>
         <div id="game-timer">
-          
-          <input class="pawprint" type="image" src="/assets/pawprint.png" style="border: 0; background: transparent" value="START"  onclick="startTimer()"></input>
-          <input type="button" value="STOP" onclick="stopTimer()"></input>
+
+          <input class="pawprint" type="image" src="/assets/pawprint.png" style="border: 0; background: transparent"
+                 value="START"  alt="tiny paw print" onclick="startTimer()">
+          <input type="button" value="STOP" onclick="stopTimer()">
+
           <span class="minutes">0</span> Minute(s)
           <span class="seconds">00</span> Seconds
           <button>Reset Game</button>
-          <button>Help</button>
+          <button>Help</button
         </div>
       </nav>
     </header>
@@ -101,6 +103,7 @@
         </div>
       </div>
     </section>
+
     <div class="start-game popup">
       <section class="pop">
         <p>How to Play</p>
@@ -113,7 +116,8 @@
     <div class="end-game popup">
       <section class="pop">
         <p>Congratulations You've Won!</p>
-        <p>You beat the game in ...</p>
+        <p>You beat the game in ...<span id="final-time"></span></p>
+
         <button class="end">Restart Game</button>
       </section>
     </div>

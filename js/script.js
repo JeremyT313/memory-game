@@ -23,6 +23,7 @@ function flipCard() {
   }
 }
 
+//Need to create deck
 const deck = [];
 cards.forEach(card => {
   deck.push(card);
@@ -59,7 +60,7 @@ function isMatch(card1, card2) {
     setTimeout(() => {
       firstCard.classList.remove("flip");
       secondCard.classList.remove("flip");
-    }, 1500);
+    }, 550);
     card1.addEventListener("click", flipCard);
     card2.addEventListener("click", flipCard);
   }
@@ -117,6 +118,16 @@ function reset() {
     console.log(card);
     playField.appendChild(card);
   });
+  startTimer();
+}
+
+function reset() {
+  let div = document.querySelectorAll("div");
+  div.forEach(div => {
+    div.classList.remove("flip");
+  });
+  document.querySelector(".end-game").style.display = "none";
+  shuffle(deck);
   startTimer();
 }
 
