@@ -7,6 +7,7 @@ body {
   height: 100vh;
   background: white;
   border-image: url(/assets/mud-splatter.jpg);
+  border-width: 125px;
   border-image-repeat: repeat;
 }
 nav {
