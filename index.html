@@ -15,15 +15,10 @@
       <h1>Memory Game</h1>
       <nav>
         <div id="game-timer">
-
-          <input class="pawprint" type="image" src="/assets/pawprint.png" style="border: 0; background: transparent"
-                 value="START"  alt="tiny paw print" onclick="startTimer()">
-          <input type="button" value="STOP" onclick="stopTimer()">
-
           <span class="minutes">0</span> Minute(s)
           <span class="seconds">00</span> Seconds
           <button>Reset Game</button>
-          <button>Help</button
+          <button>Help</button>
         </div>
       </nav>
     </header>
@@ -31,7 +26,7 @@
       <div class="play-field">
         <div class="memory-card" data-matchValue="1">
           <img src="assets/cane-corso.jpg" class="front-card" alt="" />
-          <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
+          <img src="assets/pawprint.png" class="back-card" alt="" />
         </div>
         <div class="memory-card" data-matchValue="1">
           <img src="assets/cane-corso.jpg" class="front-card" alt="" />
@@ -110,13 +105,13 @@
         <p>Each turn, two cards are flipped over.<br> If the cards do not match, they are both turned back face
           down.<br>
           If the cards match, they will disappear! <br>Collect all the matches to win the game!</p>
-        <button class="start">button</button>
+        <button class="start">Begin Game</button>
       </section>
     </div>
     <div class="end-game popup">
       <section class="pop">
-        <p>Congratulations You've Won!</p>
-        <p>You beat the game in ...<span id="final-time"></span></p>
+        <p>Congratulations! You've Won!</p>
+        <p>You beat the game in <span id="final-time"></span></p>
 
         <button class="end">Restart Game</button>
       </section>

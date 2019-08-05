@@ -39,7 +39,11 @@ function startTimer() {
 }
 
 function stopTimer() {
+  const finalTime = document.querySelector("#final-time");
+  console.dir(document.querySelector(".minutes"));
+  finalTime.innerHTML = `${document.querySelector(".minutes").textContent} minutes and ${document.querySelector(".seconds").textContent} seconds`;
   clearInterval(timer);
+
 }
 
 endGameCounter = deck.length;
@@ -53,6 +57,7 @@ function isMatch(card1, card2) {
     endGameCounter -= 2;
     card1.removeEventListener("click", flipCard);
     card2.removeEventListener("click", flipCard);
+  //  Need to toggle a class for making them disappear.
   } else {
     //run code to flip cards back over and continue game
     // function flipCard()
@@ -102,16 +107,6 @@ function shuffle(deck) {
 function startGame() {
   document.querySelector(".start-game").style.display = "none";
   shuffle(deck);
-  startTimer();
-}
-
-function reset() {
-  let div = document.querySelectorAll("div");
-  div.forEach(div => {
-    div.classList.remove("flip");
-  });
-  document.querySelector(".end-game").style.display = "none";
-  shuffle(deck);
   const playField = document.querySelector(".play-field");
   playField.innerHTML = "";
   deck.forEach((card) => {
@@ -129,6 +124,10 @@ function reset() {
   document.querySelector(".end-game").style.display = "none";
   shuffle(deck);
   startTimer();
+  cards.forEach(card => {
+    card.addEventListener(`click`, flipCard);
+  });
+  endGameCounter = deck.length;
 }
 
 document.querySelector(".start").addEventListener("click", startGame);
