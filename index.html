@@ -9,15 +9,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Memory Game</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lacquer&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
-      <h1>Memory Game</h1>
+      <h1>Dirty Dogs Memory Game</h1>
       <nav>
         <div id="game-timer">
-          
-          <input class="pawprint" type="image" src="/assets/pawprint.png" style="border: 0; background: transparent" value="START"  onclick="startTimer()"></input>
-          <input type="button" value="STOP" onclick="stopTimer()"></input>
+          <!-- <input
+            class="pawprint"
+            type="image"
+            src="/assets/pawprint.png"
+            style="border: 0; background: transparent"
+            value="START"
+            alt="tiny paw print"
+            onclick="startTimer()"
+          /> -->
+          <input type="button" value="STOP" onclick="stopTimer()" />
+
           <span class="minutes">0</span> Minute(s)
           <span class="seconds">00</span> Seconds
           <button>Reset Game</button>
@@ -27,97 +39,111 @@
     </header>
     <section>
       <div class="play-field">
-        <div class="memory-card" data-matchValue="1">
+        <!-- <div id="mud-border">
+          <img src="/mud-splatter.jpg" />
+        </div> -->
+
+        <div id="one" class="memory-card" data-matchValue="1">
+          <img id="one" src="assets/cane-corso.jpg" class="front-card" alt="" />
+          <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
+        </div>
+        <div id="two" class="memory-card" data-matchValue="1">
           <img src="assets/cane-corso.jpg" class="front-card" alt="" />
           <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
         </div>
-        <div class="memory-card" data-matchValue="1">
-          <img src="assets/cane-corso.jpg" class="front-card" alt="" />
-          <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
-        </div>
-        <div class="memory-card" data-matchValue="2">
+
+        <div id="three" class="memory-card" data-matchValue="2">
           <img src="assets/cattledog.jpg" class="front-card" alt="" />
           <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
         </div>
-        <div class="memory-card" data-matchValue="2">
+
+        <div id="four" class="memory-card" data-matchValue="2">
           <img src="assets/cattledog.jpg" class="front-card" alt="" />
           <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
         </div>
-        <div class="memory-card" data-matchValue="3">
+        <div id="five" class="memory-card" data-matchValue="3">
           <img src="assets/puli.jpg" class="front-card" alt="" />
           <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
         </div>
-        <div class="memory-card" data-matchValue="3">
+        <div id="six" class="memory-card" data-matchValue="3">
           <img src="assets/puli.jpg" class="front-card" alt="" />
           <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
         </div>
-        <div class="memory-card" data-matchValue="4">
+        <div id="seven" class="memory-card" data-matchValue="4">
           <img src="assets/spaniel.jpg" class="front-card" alt="" />
           <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
         </div>
-        <div class="memory-card" data-matchValue="4">
+        <div id="eight" class="memory-card" data-matchValue="4">
           <img src="assets/spaniel.jpg" class="front-card" alt="" />
           <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
         </div>
-        <div class="memory-card" data-matchValue="5">
+        <div id="nine" class="memory-card" data-matchValue="5">
           <img src="assets/shihtzu.jpg" class="front-card" alt="" />
           <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
         </div>
-        <div class="memory-card" data-matchValue="5">
+        <div id="ten" class="memory-card" data-matchValue="5">
           <img src="assets/shihtzu.jpg" class="front-card" alt="" />
           <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
         </div>
-        <div class="memory-card" data-matchValue="6">
+        <div id="eleven" class="memory-card" data-matchValue="6">
           <img src="assets/terrier-one.jpg" class="front-card" alt="" />
           <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
         </div>
-        <div class="memory-card" data-matchValue="6">
+        <div id="twelve" class="memory-card" data-matchValue="6">
           <img src="assets/terrier-one.jpg" class="front-card" alt="" />
           <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
         </div>
-        <div class="memory-card" data-matchValue="7">
+        <div id="thirteen" class="memory-card" data-matchValue="7">
           <img src="assets/chowchow.jpg" class="front-card" alt="" />
           <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
         </div>
-        <div class="memory-card" data-matchValue="7">
+        <div id="fourteen" class="memory-card" data-matchValue="7">
           <img src="assets/chowchow.jpg" class="front-card" alt="" />
           <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
         </div>
-        <div class="memory-card" data-matchValue="8">
+        <div id="fifteen" class="memory-card" data-matchValue="8">
           <img src="assets/crested.jpg" class="front-card" alt="" />
           <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
         </div>
-        <div class="memory-card" data-matchValue="8">
+        <div id="sixteen" class="memory-card" data-matchValue="8">
           <img src="assets/crested.jpg" class="front-card" alt="" />
           <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
         </div>
-        <div class="memory-card" data-matchValue="9">
+        <div id="seventeen" class="memory-card" data-matchValue="9">
           <img src="assets/russell.jpg" class="front-card" alt="" />
           <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
         </div>
-        <div class="memory-card" data-matchValue="9">
+        <div id="eighteen" class="memory-card" data-matchValue="9">
           <img src="assets/russell.jpg" class="front-card" alt="" />
           <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
         </div>
+        <!-- 
+        <div id="mud-border2">
+          <img src="assets/mud-splatter2.jpg" />
+        </div> -->
       </div>
     </section>
+
     <div class="start-game popup">
       <section class="pop">
         <p>How to Play</p>
-        <p>Each turn, two cards are flipped over.<br> If the cards do not match, they are both turned back face
-          down.<br>
-          If the cards match, they will disappear! <br>Collect all the matches to win the game!</p>
+        <p>
+          Each turn, two cards are flipped over.<br />
+          If the cards do not match, they are both turned back face down.<br />
+          If the cards match, they will disappear! <br />Collect all the matches
+          to win the game!
+        </p>
         <button class="start">button</button>
       </section>
     </div>
     <div class="end-game popup">
       <section class="pop">
         <p>Congratulations You've Won!</p>
-        <p>You beat the game in ...</p>
+        <p>You beat the game in ...<span id="final-time"></span></p>
+
         <button class="end">Restart Game</button>
       </section>
     </div>
-
 
     <script src="js/script.js"></script>
   </body>
