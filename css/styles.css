@@ -5,18 +5,23 @@
 
 body {
   height: 100vh;
-  background: white;
-  background-image: url("dirty-dog-header.jpg");
-
+  /* height: 100vh; */
+  background-image: url(/assets/pawprint.png);
 }
+
 nav {
   margin: auto;
+}
+
+h1 {
+  font-family: "Lacquer", sans-serif;
 }
 
 .play-field {
   height: 85vh;
   width: 80vw;
   display: grid;
+
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
@@ -24,6 +29,17 @@ nav {
   margin: auto;
   perspective: 1000px;
 }
+
+/* #mud-border {
+  width: 150px;
+  grid-column: 1/2;
+  grid-row: 2/6;
+}
+#mud-border2 {
+  width: 150px;
+  grid-column: 5/6;
+  grid-row: 2/6;
+} */
 
 .memory-card {
   background: white;
@@ -114,7 +130,6 @@ nav {
   height: 50px;
   width: 50px;
 }
-
 
 @media only screen and (min-width: 750px) {
   .play-field {

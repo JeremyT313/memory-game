@@ -99,6 +99,12 @@ function shuffle(deck) {
     deck[currentIndex] = deck[randomIndex];
     deck[randomIndex] = temporaryValue;
   }
+  const playField = document.querySelector(".play-field");
+  playField.innerHTML = "";
+  deck.forEach((card) => {
+    console.log(card);
+    playField.appendChild(card);
+  });
   return deck;
   //After deck has been shuffled we need to make sure the innerHTML of the play-field is set equal
   //to empty string ("") and then do a for each method in the deck array and inner html it with all of its properties.
@@ -123,6 +129,7 @@ function reset() {
   });
   document.querySelector(".end-game").style.display = "none";
   shuffle(deck);
+  stopTimer()
   startTimer();
   cards.forEach(card => {
     card.addEventListener(`click`, flipCard);
@@ -132,3 +139,4 @@ function reset() {
 
 document.querySelector(".start").addEventListener("click", startGame);
 document.querySelector(".end").addEventListener("click", reset);
+document.querySelector(".reset-btn").addEventListener("click", reset);
