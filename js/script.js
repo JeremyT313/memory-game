@@ -56,7 +56,19 @@ function isMatch(card1, card2) {
     console.log("cards were a match");
     endGameCounter -= 2;
     card1.removeEventListener("click", flipCard);
+
     card2.removeEventListener("click", flipCard);
+    setTimeout(() => {
+      // card1.hasChildNodes(".back-card").style.display = "none";
+      // card1.lastChild.style.display = "none";
+      card1.classList.remove('flip');
+      card2.classList.remove('flip');
+      setTimeout(() => {
+        card1.classList.add('confirmedMatch');
+        card2.classList.add('confirmedMatch');
+      }, 550);
+
+    }, 550);
   //  Need to toggle a class for making them disappear.
   } else {
     //run code to flip cards back over and continue game
