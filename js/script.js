@@ -112,6 +112,7 @@ function reset() {
   });
   document.querySelector(".end-game").style.display = "none";
   shuffle(deck);
+  stopTimer();
   startTimer();
   cards.forEach(card => {
     card.addEventListener(`click`, flipCard);
@@ -121,3 +122,4 @@ function reset() {
 
 document.querySelector(".start").addEventListener("click", startGame);
 document.querySelector(".end").addEventListener("click", reset);
+document.querySelector(".reset-btn").addEventListener("click", reset);
