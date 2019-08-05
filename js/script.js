@@ -39,7 +39,11 @@ function startTimer() {
 }
 
 function stopTimer() {
+  const finalTime = document.querySelector("#final-time");
+  console.dir(document.querySelector(".minutes"));
+  finalTime.innerHTML = `${document.querySelector(".minutes").textContent} minutes and ${document.querySelector(".seconds").textContent} seconds`;
   clearInterval(timer);
+
 }
 
 endGameCounter = deck.length;
@@ -53,6 +57,7 @@ function isMatch(card1, card2) {
     endGameCounter -= 2;
     card1.removeEventListener("click", flipCard);
     card2.removeEventListener("click", flipCard);
+  //  Need to toggle a class for making them disappear.
   } else {
     //run code to flip cards back over and continue game
     // function flipCard()
@@ -94,6 +99,12 @@ function shuffle(deck) {
     deck[currentIndex] = deck[randomIndex];
     deck[randomIndex] = temporaryValue;
   }
+  const playField = document.querySelector(".play-field");
+  playField.innerHTML = "";
+  deck.forEach((card) => {
+    console.log(card);
+    playField.appendChild(card);
+  });
   return deck;
   //After deck has been shuffled we need to make sure the innerHTML of the play-field is set equal
   //to empty string ("") and then do a for each method in the deck array and inner html it with all of its properties.
@@ -112,7 +123,7 @@ function reset() {
   });
   document.querySelector(".end-game").style.display = "none";
   shuffle(deck);
-  stopTimer();
+  stopTimer()
   startTimer();
   cards.forEach(card => {
     card.addEventListener(`click`, flipCard);

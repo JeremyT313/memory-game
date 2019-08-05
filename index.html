@@ -19,16 +19,6 @@
       <h1>Dirty Dogs Memory Game</h1>
       <nav>
         <div id="game-timer">
-          <!-- <input
-            class="pawprint"
-            type="image"
-            src="/assets/pawprint.png"
-            style="border: 0; background: transparent"
-            value="START"
-            alt="tiny paw print"
-            onclick="startTimer()"
-          /> -->
-          <input type="button" value="STOP" onclick="stopTimer()" />
 
           <span class="minutes">0</span> Minute(s)
           <span class="seconds">00</span> Seconds
@@ -40,10 +30,6 @@
     </header>
     <section>
       <div class="play-field">
-        <!-- <div id="mud-border">
-          <img src="/mud-splatter.jpg" />
-        </div> -->
-
         <div id="one" class="memory-card" data-matchValue="1">
           <img id="one" src="assets/cane-corso.jpg" class="front-card" alt="" />
           <img src="assets/dirty-dog-header.jpg" class="back-card" alt="" />
@@ -139,8 +125,8 @@
     </div>
     <div class="end-game popup">
       <section class="pop">
-        <p>Congratulations You've Won!</p>
-        <p>You beat the game in ...<span id="final-time"></span></p>
+        <p>Congratulations! You've Won!</p>
+        <p>You beat the game in <span id="final-time"></span></p>
 
         <button class="end">Restart Game</button>
       </section>
