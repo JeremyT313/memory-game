@@ -113,12 +113,6 @@ function shuffle(deck) {
 function startGame() {
   document.querySelector(".start-game").style.display = "none";
   shuffle(deck);
-  const playField = document.querySelector(".play-field");
-  playField.innerHTML = "";
-  deck.forEach((card) => {
-    console.log(card);
-    playField.appendChild(card);
-  });
   startTimer();
 }
 
